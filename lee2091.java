@@ -1,3 +1,15 @@
+/*
+ * Key Concept for 2091. Removing Minimum and Maximum From Array:
+ * 
+ * 1. Find the 0-based indices of the minimum and maximum elements.
+ * 2. Let left = min(minIdx, maxIdx) and right = max(minIdx, maxIdx).
+ * 3. Calculate deletions for the 3 valid scenarios to remove both elements:
+ *    - Both from Front:  right + 1
+ *    - Both from Back:   n - left
+ *    - From Both Sides:  (left + 1) + (n - right)
+ * 4. Return the minimum of all 3 costs: Math.min(front, Math.min(back, both)).
+ */
+
 class Solution {
     public int minimumDeletions(int[] nums) {
         int f=0;
